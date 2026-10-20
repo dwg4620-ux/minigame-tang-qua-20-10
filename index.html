@@ -322,6 +322,8 @@ body.game-started .app-root { display:block; }
     </svg></span>`;
     $('gateGreeting').innerHTML=`Thân tặng bạn <strong>${name.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}</strong><br>Chúc bạn ngày 20/10 luôn rạng rỡ như hoa, dịu dàng mà mạnh mẽ, được yêu thương thật nhiều và mọi điều mong ước đều nở rộ. Chúc bạn luôn vui vẻ, tự tin và học tiếng Trung thật giỏi nhé! 💗`;
     $('gateGreeting').hidden=false;$('enterGameButton').hidden=false;$('bloomButton').hidden=true;$('gateHint').textContent='Bó hoa của riêng bạn đã sẵn sàng 🌸';
+    // Điểm nhấn khi bó hoa hoàn thành: chuông chúc mừng tươi vui và hoa giấy.
+    celebrate(window.innerWidth / 2, Math.min(window.innerHeight * .38, 320));
   });
   $('enterGameButton').addEventListener('click',()=>{document.body.classList.add('game-started');$('nameGate').hidden=true;try{startMusic();}catch(_){}});
 
